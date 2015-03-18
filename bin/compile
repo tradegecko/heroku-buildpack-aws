@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "-----> Importing Xero Certificates"
+
+# export the AWS keys
+ENV_DIR=$3
+for KEY in AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY; do
+  [ -f $ENV_DIR/$KEY ] && export "$KEY=$(cat $ENV_DIR/$KEY)"
+done
+
+cd $1
+bundle exec ./bin/post-deploy --path vendor/bundle
+cd -

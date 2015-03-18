@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# this pack is always valid
+echo "Ruby"
+exit 0
