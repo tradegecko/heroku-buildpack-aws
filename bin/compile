@@ -11,11 +11,11 @@ cd $1
 bundle exec ./bin/post-deploy --path vendor/bundle
 
 # Make sure Xero certificates were downloaded by XeroImporter
-if [ -f "config/certs/entrust-cert-2016.pem" ]; then
-  echo "--- Found entrust-cert-2016.pem"
+if [ -f "config/certs/entrust-cert.pem" ]; then
+  echo "--- Found entrust-cert.pem"
   exit 0
 else
-  echo "Missing config/certs/entrust-cert-2016.pem"
+  echo "Missing config/certs/entrust-cert.pem"
   exit 1
 fi
 
