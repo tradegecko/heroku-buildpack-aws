@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Make sure Xero certificates were downloaded by XeroImporter
+if [ -f $1/config/certs/entrust-cert-2016.pem ]; then
+  echo "--- Found entrust-cert-2016.pem"
+  exit 0
+else
+  echo "Missing config/certs/entrust-cert-2016.pem"
+  exit 1
+fi
